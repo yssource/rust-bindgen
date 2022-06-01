@@ -553,7 +553,10 @@ where
     let verbose = matches.is_present("verbose");
 
     if matches.is_present("V") {
-        println!("bindgen {}", option_env!("CARGO_PKG_VERSION").unwrap_or("unknown"));
+        println!(
+            "bindgen {}",
+            option_env!("CARGO_PKG_VERSION").unwrap_or("unknown")
+        );
         if verbose {
             println!("Clang version: {}", crate::clang_version().full);
         }
